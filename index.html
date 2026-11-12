@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather Application</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container min-vh-100 d-flex justify-content-center align-items-center py-5">
+
+        <div class="weather-card">
+
+            <!-- Header -->
+            <div class="text-center mb-4">
+
+                <div class="app-label">WEATHER FORECAST</div>
+
+                <h1>Weather Application</h1>
+
+                <p class="subtitle">
+                    Explore current weather conditions across India.
+                </p>
+
+            </div>
+
+            <!-- Search Form -->
+            <form id="weatherForm" class="mb-3">
+
+                <label for="cityInput" class="form-label">
+                    Search your city
+                </label>
+
+                <div class="search-wrapper">
+
+                    <div class="input-group">
+
+                        <input
+                            type="text"
+                            id="cityInput"
+                            class="form-control"
+                            placeholder="Search city or state..."
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button class="btn search-btn" type="submit">
+                            Search
+                        </button>
+
+                    </div>
+
+                    <!-- Autocomplete Suggestions -->
+                    <div id="suggestions" class="suggestions d-none"></div>
+
+                </div>
+
+                <small class="search-hint">
+                    Try Lucknow, Delhi, Mumbai, Kanpur...
+                </small>
+
+            </form>
+
+            <!-- Messages -->
+            <div id="message" aria-live="polite"></div>
+
+            <!-- Weather Information -->
+            <section id="weatherInfo" class="d-none">
+
+                <div class="weather-main text-center">
+
+                    <div class="location-label">CURRENT WEATHER</div>
+
+                    <h2 id="cityName">City Name</h2>
+
+                    <p id="cityAddress" class="city-address"></p>
+
+                    <div id="weatherIcon" class="weather-icon">☀</div>
+
+                    <h1 id="temperature" class="temperature">--°C</h1>
+
+                    <h5 id="condition" class="condition">
+                        Weather Condition
+                    </h5>
+
+                </div>
+
+                <!-- Weather Details -->
+                <div class="row g-3 mt-3">
+
+                    <div class="col-6">
+                        <div class="weather-detail">
+                            <span class="detail-icon">HUMIDITY</span>
+                            <p>Humidity</p>
+                            <h4 id="humidity">--%</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="weather-detail">
+                            <span class="detail-icon">WIND</span>
+                            <p>Wind Speed</p>
+                            <h4 id="wind">-- km/h</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="weather-detail">
+                            <span class="detail-icon">FEELS</span>
+                            <p>Feels Like</p>
+                            <h4 id="feelsLike">--°C</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="weather-detail">
+                            <span class="detail-icon">RAIN</span>
+                            <p>Precipitation</p>
+                            <h4 id="precipitation">-- mm</h4>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center mt-4">
+                <p>Powered by Open-Meteo Weather API</p>
+            </footer>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
